@@ -134,7 +134,7 @@ setupUserHosts() {
     truncate -s 0 "${HOSTSFILE}"
     for file in "${FILES[@]}" ; do
         local hosts
-        hosts="$(yq '.services.*.hostname' "${file}" | grep -v null | sed -e 's/^/localhost /')"
+        hosts="$(yq '.services.*.hostname' "${file}" | grep -v null | sed -e 's/^/127.0.0.1 /')"
         echo "${hosts}" >> "${HOSTSFILE}"
     done
 }
