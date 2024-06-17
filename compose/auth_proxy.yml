@@ -49,6 +49,8 @@ services:
       OAUTH2_PROXY_REDIRECT_URL: https://localhost:8443/oauth2/callback
       OAUTH2_PROXY_COOKIE_SECRET: __24_BYTE_COOKIE_SECRET_
       OAUTH2_PROXY_SKIP_AUTH_ROUTES: "^/health(/liveness)?$"
+      PROXY_PROTOCOL: https
+      PROXY_PORT: 8443
     restart: unless-stopped
     healthcheck:
       test: wget -q --spider https://auth:8443/ping || exit 1
