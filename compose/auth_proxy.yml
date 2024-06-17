@@ -11,7 +11,7 @@ services:
       QUARKUS_HTTP_PROXY_ALLOW_X_FORWARDED: "true"
       QUARKUS_HTTP_PROXY_ENABLE_FORWARDED_HOST: "true"
       QUARKUS_HTTP_PROXY_ENABLE_FORWARDED_PREFIX: "true"
-      QUARKUS_HTTP_ACCESS_LOG_PATTERN: "\nProtocol: %H\nSSL_ID: %{SSL_SESSION_ID}\n%r\n%{ALL_REQUEST_HEADERS}\n"
+      QUARKUS_HTTP_ACCESS_LOG_PATTERN: long
       QUARKUS_HTTP_ACCESS_LOG_ENABLED: "true"
     healthcheck:
       test: curl --fail http://cryostat:8181/health/liveness || exit 1
